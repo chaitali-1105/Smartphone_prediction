@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smartphone Price Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Smartphone Price Predictor</h1>
+    <p class="sub">Enter the specs and get an estimated listing price on Indian e-commerce platforms.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Specs</h2>
+        <label>Brand <select id="brand"></select></label>
+        <label>Platform <select id="platform"></select></label>
+        <label>RAM (GB) <select id="ram_gb"></select></label>
+        <label>Storage (GB) <select id="storage_gb"></select></label>
+        <label>Battery (mAh) <input type="number" id="battery_mah" step="100"></label>
+        <label>Customer rating <input type="number" id="rating" step="0.1"></label>
+        <button id="predictBtn">Predict price</button>
+        <p class="error" id="error"></p>
+      </section>
+
+      <section class="card result">
+        <h2>Estimated price</h2>
+        <div class="price" id="price">&#8377; --</div>
+        <p class="note" id="metrics"></p>
+
+        <h3>What each extra unit adds</h3>
+        <ul class="sens" id="sens"></ul>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Brand premium</h2>
+      <p class="note">Average predicted price by brand on the test data.</p>
+      <div id="chart"></div>
+    </section>
+  </main>
+
+  <script src="model.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
